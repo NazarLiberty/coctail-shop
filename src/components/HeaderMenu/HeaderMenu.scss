@@ -1,0 +1,115 @@
+
+
+.header-menu-wrapper {
+    transition: ease .5s all;
+    z-index: 10;
+    position: sticky;
+    top: 0;
+    box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.603);
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    padding: 15px 20px 20px 20px;
+    width: 100%;
+    max-width: 100%;
+    min-height: 50px;
+    max-height: 100px;
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: flex-end;
+    &.menu-sticky{
+        max-height: 75px;
+    }
+}
+.menu-logo {
+    transition: .5s all ease;
+    box-shadow: -10px -10px 30px 10px rgba(0, 0, 0, 0.603);
+    background-color: #f1f1f1;
+    fill: red;
+    position: relative;
+    top: 70px;
+    left: 15px;
+    width: 20%;
+    &.menu-sticky{
+        box-shadow: 0 0 0 0;
+        top: 40px;
+        left: 0;
+        transform: scale(0.5,0.5);
+    }
+}
+.menu-socials {
+    width: 13%;
+    i {  
+        transition: .3s all ease;
+        font-size: 20px;
+        padding: 3px 12px;
+        &:hover{
+            cursor: pointer;
+            color: gray;
+        }
+    }
+}
+.menu-cat-wrapper {
+    transition: .5s all ease;
+    font-weight: bold;
+    padding: 0 15px;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    &.menu-sticky{
+        .menu-cat-item:nth-last-of-type(2){
+            margin-right: 150px;
+        }
+    }
+  
+}
+.menu-cat-item {
+    &:nth-last-of-type(1) {
+        color: orangered;
+        border-left: 1px gray solid;
+        padding-left: 20px;
+        .menu-cat-hover{
+            left: 20px;
+        }
+    }
+
+    transition: .3s all ease;
+    padding: 2px;
+    z-index: 2;
+    position: relative;
+    &:hover { 
+        cursor: pointer;
+        color: orangered;
+        .menu-cat-hover {
+            width: 70px;
+        }
+    }
+        .menu-cat-hover{
+            z-index: 1;
+            left: 0;
+            bottom: -5px;
+            position: absolute;
+            transition: .3s all ease;
+            width: 0px;
+            height: 13px;
+            background-color: rgba(255, 102, 0, 0.171);
+    }
+}
+    
+
+.menu-cart{
+    width:7%;
+    i{  
+        transition: .3s all ease;
+        font-size: 30px;
+        padding: 3px 10px;
+        &:hover{
+            cursor: pointer;
+            color: gray;
+        }
+    }
+}
+
+
+
+

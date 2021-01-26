@@ -1,0 +1,29 @@
+.header-wrapper{
+    background-image: url('./../../assets/images/header-image.jpg');
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    transition: .3s all ease;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+
+    
+    &:hover{
+    background-size: 105%;
+
+        filter: blur(0);
+        .header-filter{
+            background-color: rgba(49, 0, 112, 0.199);
+        }
+    }
+
+    .header-filter{
+        transition: .4s all ease;
+        background-color: rgba(49, 0, 112, 0.397);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+    
+}
