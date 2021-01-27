@@ -3,6 +3,8 @@ import './App.scss'
 import CocktailSerices from '../../services/cocktail-service'
 import HeaderMenu from '../HeaderMenu/HeaderMenu'
 import Header from '../Header/Header'
+import HomeProductList from '../HomeProductList/HomeProductList'
+
 const App = () => {
     const service = new CocktailSerices();
     useEffect(() => {
@@ -14,7 +16,8 @@ const App = () => {
         <HeaderMenu />
         <Header />
         <div className="page-wrapper">
-            here's content
+            <HomeProductList />
+
         </div>
     </>
     )

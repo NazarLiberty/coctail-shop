@@ -1,4 +1,5 @@
 .header-wrapper{
+    margin-bottom: 50px;
     background-image: url('./../../assets/images/header-image.jpg');
     min-height: 100vh;
     width: 100%;
@@ -25,14 +26,63 @@
         height: 100%;
         position: absolute;
     }
+    .header-main{
+        font-family: 'Dancing Script', cursive;
+        font-size: 32px;
+        color: #fff;
+        position: absolute;
+        z-index: 1;
+        bottom: 25%;
+        left: 5%;
+        .header-subtitle{
+            position: relative;
+            left: 80px;
+            text-align: right;
+        }
+    }
     
 }
 
 @media screen and (max-width: 768px){
-.header-wrapper{
+.header-wrapper {
     background-size: cover;
-    &:hover{
+    &:hover {
         background-size: cover;
     }
 }
+    .header-main{
+        h1,h2{
+            font-size: 40px;
+        }
+       
+    }
+}
+@media screen and (max-width: 568px) {
+    .header-wrapper{
+    .header-main{
+        text-align: center;
+        position: relative;
+        padding-top: 60%;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        .header-subtitle {
+            text-align: center;
+            position: static;
+            padding-top: 25px;
+        }
+    }
+ }
+}
+@media screen and (max-width: 450px) {
+    .header-wrapper{
+        .header-main{
+            padding-top: 90%;
+            h1,h2{
+                font-size: 32px;
+            }
+        }
+    }
 }

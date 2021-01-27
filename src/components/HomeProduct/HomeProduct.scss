@@ -1,0 +1,90 @@
+.home-prod-wrapper {
+    position: relative;
+    width: 46%;
+    text-align: center;
+    &:nth-last-child(1):nth-child(odd) {
+        margin: auto;
+    }
+
+    .home-prod-img {
+        width: 100%;
+        img {
+            object-fit: cover;
+            max-width: 100%;
+        }
+        &:hover {
+            .home-prod-hover {
+            opacity: 1;
+            z-index: 4;
+        }
+    }
+    }
+    .home-prod-name{
+        font-size: 22px;
+        font-weight: bold;
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .home-prod-desc{
+        font-size: 17px;
+        text-transform: capitalize;
+        font-weight: 400;
+        font-style: italic;
+        color: gray;
+        padding: 20px 20px;
+    }
+    .home-prod-info-block{
+        position: relative;
+        bottom: 30px;
+        background: #fff;
+        width: 85%;
+        margin: auto;
+        border: 1px rgba(0, 0, 0, 0.301) solid;
+    }
+    .home-prod-hover{
+        z-index: -1;
+        transition: .4s all ease;
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 30px);
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.795);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .home-prod-price{
+            padding: 30px;
+            font-size: 35px;
+            color: orangered;
+            font-weight: bold;
+        }
+        .home-prod-order{
+            button {
+                width: 220px;
+                height: 60px;
+                text-transform: uppercase;
+                border: 0;
+                background-color: orangered;
+                color: #fff;
+                font-size: 20px;
+                border-radius: 1px;
+                &:focus{
+                    outline: none;
+                }
+                &:hover{
+                    cursor: pointer;
+                    background-color: red;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 568px){
+    .home-prod-wrapper{
+        width: 100%;
+        margin: 0 10px;
+    }
+}
