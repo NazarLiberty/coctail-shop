@@ -27,3 +27,12 @@
     }
     
 }
+
+@media screen and (max-width: 768px){
+.header-wrapper{
+    background-size: cover;
+    &:hover{
+        background-size: cover;
+    }
+}
+}
