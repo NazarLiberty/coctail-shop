@@ -1,0 +1,15 @@
+.alcohol-cat-list-wrapper{
+    .alcohol-cat-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+    .aclohol-cat-list-title {
+        color: orangered;
+        font-weight: bold;
+        font-size: 35px;
+        padding: 10px 15px;
+        font-style: italic;
+        text-align: center;
+    }
+}

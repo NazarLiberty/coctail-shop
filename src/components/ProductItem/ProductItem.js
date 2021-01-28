@@ -1,21 +1,30 @@
 import React from 'react'
 import testImg from './../../assets/images/header-image.jpg'
-import './HomeProduct.scss'
+import './ProductItem.scss'
 
 
-const HomeProduct = () => {
+const ProductItem = () => {
     return (
         <div className="home-prod-wrapper">
             <div className="home-prod-img">
                 <img src={testImg} alt="test" />
                 <div className="home-prod-hover">
-                    <div className="home-prod-price">
-                        $4.50
+                    <div className="home-prod-ingredients">
+                        <span className="home-prod-ingredients-title">Cocktails ingredients</span>
+                        <span>1: Test</span>
+                        <span>2: Test</span>
+                        <span>3: Test</span>
+
                     </div>
-                    <div className="home-prod-order">
-                        <button>
-                            Buy now
-                    </button>
+                    <div className="home-prod-order-block">
+                        <div className="home-prod-price">
+                            $4.50
+                        </div>
+                        <div className="home-prod-order">
+                            <button>
+                                Buy now
+                        </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -32,8 +41,8 @@ const HomeProduct = () => {
             </div>
 
 
-        </div>
+        </div >
     )
 }
 
-export default HomeProduct
+export default ProductItem

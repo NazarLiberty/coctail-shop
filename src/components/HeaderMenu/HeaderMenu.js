@@ -49,7 +49,7 @@ const HeaderMenu = () => {
             <span className="menu-cat-hover">
                     </span>
                 </div>
-                <div className="menu-cat-item">
+                <div className="menu-cat-item special">
                     Contact Us
             <span className="menu-cat-hover">
                     </span>

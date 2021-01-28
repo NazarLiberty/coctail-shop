@@ -17,6 +17,7 @@
     background-color: #f1f1f1;
     display: flex;
     align-items: flex-end;
+    
     .menu-burger{
         display: none;
     }
@@ -79,10 +80,11 @@
   
 }
 .menu-cat-item {
-    &:nth-last-of-type(1) {
+    &.special {
         color: orangered;
         border-left: 1px gray solid;
         padding-left: 20px;
+        
         .menu-cat-hover{
             left: 20px;
         }
@@ -174,6 +176,9 @@
                 padding: 0;
                 color: #fff;
                 border: 0;
+                &.special .menu-cat-hover{
+                    left: 0;
+                }
                 &:hover .menu-cat-hover {
                     width: 100%;
                 }

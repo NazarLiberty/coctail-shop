@@ -1,8 +1,8 @@
 import React from 'react'
-import './HomeProductList.scss'
-import HomeProduct from './../HomeProduct/HomeProduct'
+import './ProductItemList.scss'
+import ProductItem from '../ProductItem/ProductItem'
 
-const HomeProductList = () => {
+const ProductItemList = () => {
     return (
         <div className="home-prod-list-wrapper">
             <h1 className="home-prod-list-title">
@@ -10,13 +10,13 @@ const HomeProductList = () => {
                 </h1>
 
             <div className="home-product-list">
-                <HomeProduct />
-                <HomeProduct />
-                <HomeProduct />
+                <ProductItem />
+                <ProductItem />
+                <ProductItem />
 
             </div>
         </div>
     )
 }
 
-export default HomeProductList
+export default ProductItemList

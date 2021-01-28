@@ -3,7 +3,9 @@ import './App.scss'
 import CocktailSerices from '../../services/cocktail-service'
 import HeaderMenu from '../HeaderMenu/HeaderMenu'
 import Header from '../Header/Header'
-import HomeProductList from '../HomeProductList/HomeProductList'
+import ProductItemList from '../ProductItemList/ProductItemList'
+import AlcoholCategoryItem from '../AlcoholCategoryItem/AlcoholCategoryItem'
+import AlcoholCategoryList from '../AlcoholCategoryList/AlcoholCategoryList'
 
 const App = () => {
     const service = new CocktailSerices();
@@ -16,9 +18,10 @@ const App = () => {
         <HeaderMenu />
         <Header />
         <div className="page-wrapper">
-            <HomeProductList />
-
+            <ProductItemList />
+            <AlcoholCategoryList />
         </div>
+
     </>
     )
 }
