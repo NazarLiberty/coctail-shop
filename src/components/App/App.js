@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react'
+import { Provider } from 'react-redux'
+import store from '../../redux/store'
 import './App.scss'
 import CocktailSerices from '../../services/cocktail-service'
 import HeaderMenu from '../HeaderMenu/HeaderMenu'
 import Header from '../Header/Header'
-import ProductItemList from '../ProductItemList/ProductItemList'
-import AlcoholCategoryItem from '../AlcoholCategoryItem/AlcoholCategoryItem'
-import AlcoholCategoryList from '../AlcoholCategoryList/AlcoholCategoryList'
+import SearchBar from '../SearchBar/SearchBar'
+import ErrorBoundry from '../ErrorBoundry/ErrorBoundry'
+import AlcoholCategoryListContainer from '../AlcoholCategoryList/AlcoholCategoryListContainer'
+import ProductItemListContainer from '../ProductItemList/ProductItemListContainer'
 
 const App = () => {
+    // test data fetching
     const service = new CocktailSerices();
     useEffect(() => {
         service.getCocktails()
@@ -15,12 +19,17 @@ const App = () => {
     }, [service])
 
     return (<>
-        <HeaderMenu />
-        <Header />
-        <div className="page-wrapper">
-            <ProductItemList />
-            <AlcoholCategoryList />
-        </div>
+        <Provider store={store} >
+            <ErrorBoundry>
+                <HeaderMenu />
+                <Header />
+                <div className="page-wrapper">
+                    <SearchBar />
+                    <ProductItemListContainer />
+                    <AlcoholCategoryListContainer />
+                </div>
+            </ErrorBoundry>
+        </Provider>
 
     </>
     )

@@ -5,12 +5,14 @@ import { HeaderLogo, BurgerMenu } from '../../assets/svgs'
 const HeaderMenu = () => {
     const [stickyMenu, setStickyMenu] = useState(false)
     const [activeMenu, setActiveMenu] = useState(false)
+
+
     const headerMenuElement = useRef(null)
 
     const toggleMenu = () => {
         setActiveMenu(() => !activeMenu)
-        console.log(activeMenu)
     }
+
 
     useEffect(() => {
         document.addEventListener('scroll', (e) => {
@@ -18,7 +20,6 @@ const HeaderMenu = () => {
             const isMenuSticky = headerMenuElement.current.offsetTop > 240 ? true : false;
             if (!responsive) {
                 setStickyMenu(isMenuSticky)
-                e.preventDefault();
             }
         })
     }, [])
@@ -75,5 +76,6 @@ const HeaderMenu = () => {
             </div>
         </div >)
 }
+
 
 export default HeaderMenu;

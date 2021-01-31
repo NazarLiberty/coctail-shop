@@ -1,24 +1,27 @@
 import React from 'react'
-import testImg from './../../assets/images/header-image.jpg'
 import './ProductItem.scss'
 
 
-const ProductItem = () => {
+const renderIngredients = (data) => {
+    return data.map((item, index) => {
+        if (item) return <span key={index}>{index + 1}: {item}</span>
+    })
+}
+
+const ProductItem = ({ name, src, description, ingredients, price }) => {
     return (
         <div className="home-prod-wrapper">
             <div className="home-prod-img">
-                <img src={testImg} alt="test" />
+                <img src={src} alt="test" />
                 <div className="home-prod-hover">
                     <div className="home-prod-ingredients">
                         <span className="home-prod-ingredients-title">Cocktails ingredients</span>
-                        <span>1: Test</span>
-                        <span>2: Test</span>
-                        <span>3: Test</span>
+                        {renderIngredients(ingredients)}
 
                     </div>
                     <div className="home-prod-order-block">
                         <div className="home-prod-price">
-                            $4.50
+                            ${price}
                         </div>
                         <div className="home-prod-order">
                             <button>
@@ -30,12 +33,10 @@ const ProductItem = () => {
             </div>
             <div className="home-prod-info-block">
                 <div className="home-prod-name">
-                    Test Name
+                    {name}
                 </div>
                 <div className="home-prod-desc">
-                    lorem dsad dsad asd asdasd
-                    asdsad asdasdasdas dsadsad dsadas dsad
-                    dsadasdasd dasdsad dagfsdgfdg
+                    {description}
                 </div>
 
             </div>

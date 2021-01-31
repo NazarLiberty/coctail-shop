@@ -1,15 +1,14 @@
 import React from 'react'
 import './AlcoholCategoryItem.scss'
-import testImg from './../../assets/images/header-image.jpg'
 
-const AlcoholCategoryItem = () => {
+const AlcoholCategoryItem = ({ name, src }) => {
     return (
         <div className="alcohol-cat-item-wrapper">
             <div className="alcohol-cat-img">
-                <img src={testImg} alt="test" />
+                <img src={src} alt="test" />
             </div>
             <h3 className="alcohol-cat-title">
-                Test Alcohol
+                {name}
             </h3>
         </div>
     )

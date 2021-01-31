@@ -1,19 +1,16 @@
 import React from 'react'
 import './ProductItemList.scss'
-import ProductItem from '../ProductItem/ProductItem'
 
-const ProductItemList = () => {
+
+const ProductItemList = ({ content }) => {
     return (
         <div className="home-prod-list-wrapper">
             <h1 className="home-prod-list-title">
                 cocktails of this week
-                </h1>
+            </h1>
 
             <div className="home-product-list">
-                <ProductItem />
-                <ProductItem />
-                <ProductItem />
-
+                {content}
             </div>
         </div>
     )
