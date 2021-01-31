@@ -1,21 +1,31 @@
 {
   "files": {
-    "main.css": "./static/css/main.b8c3e2d1.chunk.css",
-    "main.js": "./static/js/main.ee22b720.chunk.js",
-    "main.js.map": "./static/js/main.ee22b720.chunk.js.map",
+    "main.css": "./static/css/main.7318168b.chunk.css",
+    "main.js": "./static/js/main.e431b07a.chunk.js",
+    "main.js.map": "./static/js/main.e431b07a.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.cdad7327.js",
     "runtime-main.js.map": "./static/js/runtime-main.cdad7327.js.map",
-    "static/js/2.e51a9965.chunk.js": "./static/js/2.e51a9965.chunk.js",
-    "static/js/2.e51a9965.chunk.js.map": "./static/js/2.e51a9965.chunk.js.map",
+    "static/js/2.8e3f91dc.chunk.js": "./static/js/2.8e3f91dc.chunk.js",
+    "static/js/2.8e3f91dc.chunk.js.map": "./static/js/2.8e3f91dc.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.b8c3e2d1.chunk.css.map": "./static/css/main.b8c3e2d1.chunk.css.map",
-    "static/js/2.e51a9965.chunk.js.LICENSE.txt": "./static/js/2.e51a9965.chunk.js.LICENSE.txt",
-    "static/media/Header.scss": "./static/media/header-image.7a061f8d.jpg"
+    "static/css/main.7318168b.chunk.css.map": "./static/css/main.7318168b.chunk.css.map",
+    "static/js/2.8e3f91dc.chunk.js.LICENSE.txt": "./static/js/2.8e3f91dc.chunk.js.LICENSE.txt",
+    "static/media/absent.60d91677.jpg": "./static/media/absent.60d91677.jpg",
+    "static/media/beer.b4b3df8c.jpg": "./static/media/beer.b4b3df8c.jpg",
+    "static/media/brandy.6c1d9356.jpg": "./static/media/brandy.6c1d9356.jpg",
+    "static/media/gin.a315634b.png": "./static/media/gin.a315634b.png",
+    "static/media/Header.scss": "./static/media/header-image.7a061f8d.jpg",
+    "static/media/martini.5c7a6a0a.jpg": "./static/media/martini.5c7a6a0a.jpg",
+    "static/media/rum.93e6235a.jpg": "./static/media/rum.93e6235a.jpg",
+    "static/media/tequila.6de1d32a.jpg": "./static/media/tequila.6de1d32a.jpg",
+    "static/media/vodka.1309436d.jpg": "./static/media/vodka.1309436d.jpg",
+    "static/media/whiskey.34f4f213.jpg": "./static/media/whiskey.34f4f213.jpg",
+    "static/media/wine.5310f98e.jpeg": "./static/media/wine.5310f98e.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.cdad7327.js",
-    "static/js/2.e51a9965.chunk.js",
-    "static/css/main.b8c3e2d1.chunk.css",
-    "static/js/main.ee22b720.chunk.js"
+    "static/js/2.8e3f91dc.chunk.js",
+    "static/css/main.7318168b.chunk.css",
+    "static/js/main.e431b07a.chunk.js"
   ]
 }
