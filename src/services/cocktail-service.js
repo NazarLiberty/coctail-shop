@@ -26,6 +26,11 @@ export default class CocktailSerices {
         return [...firstData.drinks, ...secondData.drinks, ...thirdData.drinks]
             .map(this._transformCocktail)
     }
+    getInfoById = async (id) => {
+        const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
+        const data = await response.json()
+        return data.map(this._transformCocktail)
+    }
     _transformCocktail = (cocktail) => {
         return {
             key: cocktail.idDrink,
