@@ -24,9 +24,29 @@ const setLoadedTopThree = (data) => {
     }
 }
 
+const setLoadedAlcoholicList = (data) => {
+    return {
+        type: 'FETCH_SUCCESS_ALCOLIST',
+        payload: data,
+    }
+
+}
+
+const setActiveItem = (id, area) => {
+    return {
+        type: 'SET_ACTIVE_ITEM',
+        payload: {
+            id,
+            area
+        }
+    }
+}
+
 export {
     setLoadedCategories,
     requestCategories,
     requestTopThree,
-    setLoadedTopThree
+    setLoadedTopThree,
+    setLoadedAlcoholicList,
+    setActiveItem,
 }

@@ -1,8 +1,8 @@
 import React from 'react'
-import './ProductItemList.scss'
+import './HomeProductItemList.scss'
 
 
-const ProductItemList = ({ content }) => {
+const HomeProductItemList = ({ content }) => {
     return (
         <div className="home-prod-list-wrapper">
             <h1 className="home-prod-list-title">
@@ -16,4 +16,4 @@ const ProductItemList = ({ content }) => {
     )
 }
 
-export default ProductItemList
+export default HomeProductItemList

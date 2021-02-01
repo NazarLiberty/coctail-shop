@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import ProductItem from '../ProductItem/ProductItem'
-import ProductItemList from './ProductItemList'
+import ProductItem from '../HomeProductItem/HomeProductItem'
+import HomeProductItemList from './HomeProductItemList'
 import CocktailSerices from '../../services/cocktail-service'
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -15,7 +15,7 @@ const renderProducts = (data) => {
 
 }
 
-const ProductItemListContainer = () => {
+const HomeProductItemListContainer = () => {
     const dispatch = useDispatch()
     const { data, loader } = useSelector(state => state.topThreeList)
     const onLoad = (data) => {
@@ -31,7 +31,7 @@ const ProductItemListContainer = () => {
             })
     }, [])
 
-    return <ProductItemList content={content} />
+    return <HomeProductItemList content={content} />
 }
 
-export default ProductItemListContainer
+export default HomeProductItemListContainer

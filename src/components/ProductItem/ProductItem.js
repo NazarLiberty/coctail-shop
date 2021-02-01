@@ -1,49 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ProductItem.scss'
+import noImage from '../../assets/images/no-image.jpg'
+import { setActiveItem } from '../../redux/actions/actions'
+import { useDispatch } from 'react-redux'
 
+const ProductItem = ({ src, name, active, id }) => {
+    const dispatch = useDispatch();
 
-const renderIngredients = (data) => {
-    return data.map((item, index) => {
-        if (item) return <span key={index}>{index + 1}: {item}</span>
-    })
-}
-
-const ProductItem = ({ name, src, description, ingredients, price }) => {
+    let imgSrc = noImage;
+    if (active && src) imgSrc = src;
+    if (!active && src) imgSrc = `${src}/preview`;
+    if (active) console.log(imgSrc)
     return (
-        <div className="home-prod-wrapper">
-            <div className="home-prod-img">
-                <img src={src} alt="test" />
-                <div className="home-prod-hover">
-                    <div className="home-prod-ingredients">
-                        <span className="home-prod-ingredients-title">Cocktails ingredients</span>
-                        {renderIngredients(ingredients)}
-
-                    </div>
-                    <div className="home-prod-order-block">
-                        <div className="home-prod-price">
-                            ${price}
-                        </div>
-                        <div className="home-prod-order">
-                            <button>
-                                Buy now
-                        </button>
-                        </div>
-                    </div>
-                </div>
+        <div className={`product-item-wrapper${active ? ' active' : ''}`}>
+            <div className="product-item-img">
+                <img src={`${imgSrc}`} alt={name} />
             </div>
-            <div className="home-prod-info-block">
-                <div className="home-prod-name">
+            <div className="product-item-info">
+                <h2 className="product-info-title">
                     {name}
-                </div>
-                <div className="home-prod-desc">
-                    {description}
-                </div>
+                </h2>
+                <button className="product-info-details"
+                    onClick={() => dispatch(setActiveItem(id, 'alcoholic-category'))}>
+                    Details
+                </button>
+            </div>
+            <div className="product-info-active">
+                <div className="product-active-title">
+                    Name
+                    </div>
+                <div className="product-active-desc">
+                    info
+                    </div>
 
             </div>
-
-
-        </div >
-    )
+        </div>)
 }
 
 export default ProductItem

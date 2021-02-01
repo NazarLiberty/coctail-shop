@@ -1,13 +1,21 @@
 export default class CocktailSerices {
     getCocktails = async () => {
         const data = await fetch(
-            "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Martini")
+            "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic")
         if (!data.ok) {
             throw new Error('Fetch error - ', data.status)
         }
         return data.json()
     }
-
+    getAlcoholicList = async () => {
+        const response = await fetch(
+            "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic")
+        if (!response.ok) {
+            throw new Error('Fetch error - ', data.status)
+        }
+        const data = await response.json()
+        return data.drinks.map(this._transformCocktailShort)
+    }
     getTopThree = async () => {
         const first = await fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
         const second = await fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
@@ -43,6 +51,15 @@ export default class CocktailSerices {
                 cocktail.strIngredient15,
             ]
 
+        }
+    }
+    _transformCocktailShort = (cocktail) => {
+        return {
+            key: cocktail.idDrink,
+            id: cocktail.idDrink,
+            name: cocktail.strDrink,
+            src: cocktail.strDrinkThumb,
+            active: false,
         }
     }
 }
