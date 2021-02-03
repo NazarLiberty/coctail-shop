@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import ProductItem from '../ProductItem/ProductItem'
 import './ProductList.scss'
 import CocktailSerices from '../../services/cocktail-service'
 import { useDispatch, useSelector } from 'react-redux';
 import { setLoadedAlcoholicList } from '../../redux/actions/actions'
+import Loader from '../Loader/Loader'
 
 const cocktailService = new CocktailSerices();
 
@@ -13,22 +14,36 @@ const renderAlcholicList = (data) => {
 
 
 const ProductList = () => {
+    const [fetchError, setFetchError] = useState(false)
     const dispatch = useDispatch();
     const { data, loader } = useSelector(state => state.alcoholicList)
 
     useEffect(() => {
         cocktailService.getAlcoholicList()
-            .then((data) => dispatch(setLoadedAlcoholicList(data)))
+            .then((data) => {
+                dispatch(setLoadedAlcoholicList(data))
+                setFetchError(false)
+            })
+            .catch(() => setFetchError(true))
     }, [])
 
-    return <div className="product-list-wrapper">
-        <h1 className="product-list-title" id="list-start">
-            Sample Title
+    const renderContent = () => {
+        if (fetchError) return <div>Something went wrong... :(</div>
+        return <>
+            <h1 className="product-list-title">
+                Alcoholic Cocktails
         </h1>
-        <div className="product-list">
-            {loader ? <div>LOADING...</div> : renderAlcholicList(data)}
+            <div className="product-list">
+                {loader ? <Loader /> : renderAlcholicList(data)}
+            </div>
+        </>
+
+    }
+    return (
+        <div className="product-list-wrapper">
+            {renderContent()}
         </div>
-    </div>
+    )
 }
 
 export default ProductList

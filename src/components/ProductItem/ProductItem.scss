@@ -1,10 +1,17 @@
+@import '../App/variables.scss';
+
+
 .product-item-wrapper {
+    border: 1px rgba(255, 68, 0, 0.5) solid;
     margin: 15px;
-    transition: .7s all ease;
-    border-radius: 4px;
-    padding: 8px;
+    transition: .5s all ease;
     width: 220px;
     box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.425);
+    &:hover{
+        transition: .4s all ease;
+        transform: scale(1.1,1.1);
+    }
+
     .product-info-active {
         position: relative;
         bottom: 200px;
@@ -17,28 +24,51 @@
         img {
             transform-origin: top left;
             transition: .8s all ease;
-            max-width: 100%;
+            width: 100%;
             object-fit: cover;
         }
     }
     .product-item-info {
         text-align: center;
+
+        .product-item-price{
+            font-size: 26px;
+            color: orangered;
+            font-weight: bold;
+            padding-bottom: 10px;
+        }
         .product-info-title {
-            min-height: 100px;
+            min-height: 60px;
             text-align: center;
             padding: 5px 0;
+            font-size: 1.3em;
         }
         .product-info-details {
-            width: 125px;
-            height: 35px;
+            @include commonButton(135px, 40px, 16px);
+            margin: 10px 0;
+            border-radius: 2px;
+            letter-spacing: 1px;
+            &:hover {
+                cursor: pointer;
+                background: orange;
+            }
         }
     }
     &.active {
+        border: none;
         box-shadow: none;
         width: 100%;
-        padding: 0 25%;
+        padding: 0 24%;
+            &:hover{
+                transform: scale(1,1);
+            }
 
         .product-info-active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 1px solid orangered;
             position: relative;
             bottom: 40px;
             z-index: 4;
@@ -47,11 +77,54 @@
             height: auto;
             min-height: 120px;
             width: 85%;
-            box-shadow: 0 0 15px -5px rgba(0, 0, 0, 0.308);
+            box-shadow: 0 -20px 40px 15px rgba(0, 0, 0, 0.486);
+
+            .product-active-title{
+                padding: 10px;
+                text-align: center;
+                color: orangered;
+                
+            }
+            .product-active-desc {
+                text-align: center;
+                padding: 0 10px;
+                font-size: 17px;
+                font-weight: bold;
+                font-style: italic;
+            }
+            .product-active-order-b {
+                font-style: normal;
+                margin: 10px 0;
+
+                .product-active-price{
+                    font-size: 36px;
+                    color: orangered;
+                }
+                .product-active-order{
+                    transition: .5s all ease;
+                    margin: 20px 0 10px 0;
+                    @include commonButton(250px, 60px, 22px);
+                    border-radius: 10px;
+                    &:hover{
+                        cursor: pointer;
+                        background-color: rgb(212, 0, 0);
+                        transform: scale(1.1,1.2);
+                        
+                    }
+                    &:active{
+                        outline: none;
+                    }
+                    &:focus{
+                        outline: none;
+                    }
+                }
+            }
         }
         .product-item-img {
+            box-shadow: 0 -20px 60px -25px #000;
             overflow: hidden;
             text-align: center;
+
             img {
                 width: 100%;
             }
@@ -62,5 +135,31 @@
                 display: none;
             }
         }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .product-item-wrapper{
+        &.active{
+            padding: 0 5%;
+            .product-info-active{
+                width: 95%;
+            .product-active-desc{
+                padding: 20px;
+                .product-active-order-b{
+                    .product-active-order{
+                    @include commonButton(200px, 40px, 20px);
+                    }
+                }
+            }
+        }
+        }
+    }
+}
+
+@media screen and (max-width: 568px){
+    .product-item-wrapper{
+        width: 175px;
+        margin: 5px;
     }
 }

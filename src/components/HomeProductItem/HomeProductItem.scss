@@ -1,3 +1,5 @@
+@import '../App/variables.scss';
+
 .home-prod-wrapper {
     position: relative;
     width: 46%;
@@ -79,14 +81,8 @@
         }
         .home-prod-order{
             button {
-                width: 220px;
-                height: 60px;
-                text-transform: uppercase;
-                border: 0;
-                background-color: orangered;
-                color: #fff;
-                font-size: 20px;
-                border-radius: 1px;
+               @include commonButton(220px, 60px, 20px);
+
                 &:focus{
                     outline: none;
                 }

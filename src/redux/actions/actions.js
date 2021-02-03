@@ -32,13 +32,18 @@ const setLoadedAlcoholicList = (data) => {
 
 }
 
-const setActiveItem = (id, area) => {
+const requestActiveItem = (id) => {
+    return {
+        type: 'FETCH_REQUEST_ACTIVE',
+        payload: id
+    }
+}
+
+const setActiveItem = (data) => {
     return {
         type: 'SET_ACTIVE_ITEM',
-        payload: {
-            id,
-            area
-        }
+        payload: data,
+
     }
 }
 
@@ -49,4 +54,5 @@ export {
     setLoadedTopThree,
     setLoadedAlcoholicList,
     setActiveItem,
+    requestActiveItem,
 }

@@ -29,7 +29,7 @@ export default class CocktailSerices {
     getInfoById = async (id) => {
         const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
         const data = await response.json()
-        return data.map(this._transformCocktail)
+        return data.drinks.map(this._transformCocktail)[0]
     }
     _transformCocktail = (cocktail) => {
         return {
@@ -64,6 +64,7 @@ export default class CocktailSerices {
             id: cocktail.idDrink,
             name: cocktail.strDrink,
             src: cocktail.strDrinkThumb,
+            price: (cocktail.idDrink / 2000).toFixed(2),
             active: false,
         }
     }

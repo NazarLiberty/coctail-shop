@@ -1,15 +1,22 @@
 const initialState = {
     alcoholCategories: {
-        loader: true,
+        loader: false,
         data: []
     },
     topThreeList: {
         data: [],
-        loader: true,
+        loader: false,
     },
     alcoholicList: {
         data: [],
         loader: true,
+    },
+    activeItemData: {
+        name: null,
+        description: null,
+        price: null,
+        activeIngredients: null,
+        loader: false
     }
 }
 
@@ -57,6 +64,23 @@ const reducer = (state = initialState, action) => {
                     loader: false,
                 }
             }
+
+        case 'FETCH_REQUEST_ACTIVE':
+            const activeItemId = action.payload
+            const newList = setActiveItem(state.alcoholicList.data, activeItemId)
+
+            return {
+                ...state,
+                alcoholicList: {
+                    ...state.alcoholicList,
+                    data: newList,
+                },
+                activeItemData: {
+                    ...state.activeItemData,
+                    loader: true,
+                }
+            }
+
         case 'FETCH_SUCCESS_ALCOLIST':
             return {
                 ...state,
@@ -66,14 +90,17 @@ const reducer = (state = initialState, action) => {
                 }
             }
         case 'SET_ACTIVE_ITEM':
-            const { area, id } = action.payload
-            let defaultAlcoholicList = state.alcoholicList.data
-            if (area === 'alcoholic-category') defaultAlcoholicList = setActiveItem(defaultAlcoholicList, id)
+            const activeItemData = action.payload;
+            const { name, description, price, ingredients } = activeItemData
+
             return {
                 ...state,
-                alcoholicList: {
-                    ...state.alcoholicList,
-                    data: defaultAlcoholicList
+                activeItemData: {
+                    activeName: name,
+                    activeDescription: description,
+                    activePrice: price,
+                    loader: false,
+                    activeIngredients: ingredients
                 }
             }
 

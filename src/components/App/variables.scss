@@ -1,0 +1,11 @@
+@mixin commonButton($width, $height, $fsize) {
+    transition: .4s all ease;
+    background-color: orangered;
+    color: #fff;
+    text-transform: uppercase;
+    border: 0;
+    width: $width;
+    height: $height;
+    border-radius: 2px;
+    font-size: $fsize;
+}
