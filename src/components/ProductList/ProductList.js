@@ -12,7 +12,6 @@ const renderAlcholicList = (data) => {
     return data.map((props) => <ProductItem {...props} />)
 }
 
-
 const ProductList = () => {
     const [fetchError, setFetchError] = useState(false)
     const dispatch = useDispatch();
@@ -25,6 +24,11 @@ const ProductList = () => {
                 setFetchError(false)
             })
             .catch(() => setFetchError(true))
+        window.scroll({
+            left: 0,
+            top: 700,
+            behavior: 'smooth'
+        })
     }, [])
 
     const renderContent = () => {

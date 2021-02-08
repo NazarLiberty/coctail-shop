@@ -24,7 +24,7 @@ const ProductItem = ({ src, name, active, id, price }) => {
                 top: elementPosY,
                 behavior: 'smooth'
             })
-        }, 450);
+        }, 550);
         cocktailService.getInfoById(id)
             .then((data) => {
                 dispatch(setActiveItem(data))
@@ -47,7 +47,7 @@ const ProductItem = ({ src, name, active, id, price }) => {
         )
         return (
             <div className="product-info-active" >
-                { loader ? <Loader /> :
+                { loader && active ? <Loader /> :
                     <>
                         <h1 className="product-active-title">
                             {activeName}

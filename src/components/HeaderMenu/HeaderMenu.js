@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './HeaderMenu.scss'
 import { HeaderLogo, BurgerMenu } from '../../assets/svgs'
+import { Link } from 'react-router-dom'
 
 const HeaderMenu = () => {
     const [stickyMenu, setStickyMenu] = useState(false)
@@ -31,16 +32,20 @@ const HeaderMenu = () => {
             ref={headerMenuElement}>
             <div className={`menu-logo${stickyMenu ? ' menu-sticky' : ""}`}>
                 <a className="menu-logo-img">
-                    <HeaderLogo />
+                    <Link to="/">
+                        <HeaderLogo />
+                    </Link>
                 </a>
             </div>
             <div className={`menu-cat-wrapper${stickyMenu ? ' menu-sticky' : ""}`}>
 
-                <div className="menu-cat-item">
-                    Alcoholic
+                <Link to="/alcoholic">
+                    <div className="menu-cat-item">
+                        Alcoholic
             <span className="menu-cat-hover">
-                    </span>
-                </div>
+                        </span>
+                    </div>
+                </Link>
                 <div className="menu-cat-item">
                     non-alcoholic
             <span className="menu-cat-hover">
