@@ -24,9 +24,9 @@ const setLoadedTopThree = (data) => {
     }
 }
 
-const setLoadedAlcoholicList = (data) => {
+const setLoadedCategoryList = (data) => {
     return {
-        type: 'FETCH_SUCCESS_ALCOLIST',
+        type: 'FETCH_SUCCESS_CATLIST',
         payload: data,
     }
 
@@ -52,7 +52,7 @@ export {
     requestCategories,
     requestTopThree,
     setLoadedTopThree,
-    setLoadedAlcoholicList,
+    setLoadedCategoryList,
     setActiveItem,
     requestActiveItem,
 }

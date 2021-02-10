@@ -3,7 +3,7 @@
 
 
 
-body{
+body {
     font-family: 'Quicksand', sans-serif;
 
 }
@@ -13,9 +13,17 @@ body{
     padding: 0;
     box-sizing: border-box;
 }
-.page-wrapper{
+.page-wrapper {
     max-width: 1200px;
     margin: auto;
+}
+a {
+    color: inherit;
+    text-decoration: inherit;
+    &:visited{
+        color: inherit;
+        text-decoration: inherit;
+    }
 }
 
 

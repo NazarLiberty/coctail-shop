@@ -7,6 +7,7 @@ import {
     requestTopThree,
     setLoadedTopThree
 } from '../../redux/actions/actions'
+import Loader from '../Loader/Loader';
 
 const cocktailService = new CocktailSerices();
 
@@ -21,7 +22,7 @@ const HomeProductItemListContainer = () => {
     const onLoad = (data) => {
         return dispatch(setLoadedTopThree(data))
     }
-    const content = loader ? <div>TOP 3 IS LOADING...</div> : renderProducts(data)
+    const content = loader ? <Loader /> : renderProducts(data)
 
     useEffect(() => {
         dispatch(requestTopThree())

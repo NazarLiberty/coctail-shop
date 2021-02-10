@@ -1,12 +1,10 @@
 import React from 'react'
 
-import ProductList from '../ProductList/ProductList'
+import ProductListContainer from '../ProductList/ProductListContainer'
 
 const Alcoholic = () => {
     return (
-        <>
-            <ProductList />
-        </>
+        <ProductListContainer category='alcoholic' />
     )
 }
 

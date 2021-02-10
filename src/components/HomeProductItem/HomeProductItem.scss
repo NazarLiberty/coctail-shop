@@ -79,6 +79,7 @@
             color: orangered;
             font-weight: bold;
         }
+        
         .home-prod-order{
             button {
                @include commonButton(220px, 60px, 20px);

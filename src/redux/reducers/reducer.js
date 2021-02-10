@@ -7,7 +7,7 @@ const initialState = {
         data: [],
         loader: false,
     },
-    alcoholicList: {
+    categoryList: {
         data: [],
         loader: true,
     },
@@ -67,12 +67,12 @@ const reducer = (state = initialState, action) => {
 
         case 'FETCH_REQUEST_ACTIVE':
             const activeItemId = action.payload
-            const newList = setActiveItem(state.alcoholicList.data, activeItemId)
+            const newList = setActiveItem(state.categoryList.data, activeItemId)
 
             return {
                 ...state,
-                alcoholicList: {
-                    ...state.alcoholicList,
+                categoryList: {
+                    ...state.categoryList,
                     data: newList,
                 },
                 activeItemData: {
@@ -81,10 +81,10 @@ const reducer = (state = initialState, action) => {
                 }
             }
 
-        case 'FETCH_SUCCESS_ALCOLIST':
+        case 'FETCH_SUCCESS_CATLIST':
             return {
                 ...state,
-                alcoholicList: {
+                categoryList: {
                     loader: false,
                     data: action.payload
                 }

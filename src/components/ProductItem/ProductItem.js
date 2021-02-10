@@ -9,14 +9,21 @@ import Loader from '../Loader/Loader'
 
 const cocktailService = new CocktailSerices();
 
+const renderIngredients = (data) => {
+    return data.map((item, index) => {
+        if (item) return <span key={index}>{index + 1}: {item}</span>
+        else return null
+    })
+}
+
 const ProductItem = ({ src, name, active, id, price }) => {
     const [fetchError, setFetchError] = useState(false)
     const dispatch = useDispatch();
-    let { activeName, activeDescription, activePrice, loader } = useSelector(state => state.activeItemData)
+    let { activeName, activeDescription, activePrice, loader, activeIngredients } = useSelector(state => state.activeItemData)
     const activeElement = useRef(null)
 
     const onActiveItem = () => {
-        dispatch(requestActiveItem(id, 'alcoholic-category'))
+        dispatch(requestActiveItem(id))
         setTimeout(() => {
             const elementPosY = activeElement.current.offsetTop
             window.scroll({
@@ -39,6 +46,17 @@ const ProductItem = ({ src, name, active, id, price }) => {
     if (!active && src) imgSrc = `${src}/preview`;
     if (active && loader) imgSrc = imgLoader;
 
+    const activeContentIngredients = () => {
+        if (!loader && active) return (
+            <div className="product-active-hover">
+                <div className="product-active-ingredients">
+                    <span className="product-active-ingredients-title">Cocktails ingredients</span>
+                    {renderIngredients(activeIngredients)}
+                </div>
+            </div>
+        )
+        return null
+    }
     const activeContent = () => {
         if (fetchError) return (
             <div className="product-info-active" >
@@ -73,6 +91,7 @@ const ProductItem = ({ src, name, active, id, price }) => {
             ref={activeElement}>
             <div className="product-item-img">
                 <img src={`${imgSrc}`} alt={name} />
+                {activeContentIngredients()}
             </div>
             <div className="product-item-info">
                 <h2 className="product-info-title">

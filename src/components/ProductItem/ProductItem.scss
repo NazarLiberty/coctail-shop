@@ -1,6 +1,5 @@
 @import '../App/variables.scss';
 
-
 .product-item-wrapper {
     border: 1px rgba(255, 68, 0, 0.5) solid;
     margin: 15px;
@@ -21,11 +20,44 @@
         height: 0px;
     }
     .product-item-img {
+        position: relative;
         img {
             transform-origin: top left;
             transition: .8s all ease;
             width: 100%;
             object-fit: cover;
+        }
+        .product-active-hover{
+            top: 0;
+            opacity: 0;
+            background-color: rgba(0, 0, 0, 0.664);
+            transition: .5s all ease;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            .product-active-ingredients{
+                color: #fff;
+                height: 100%;
+                flex-direction: column;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            .product-active-ingredients-title{
+                font-size: 45px;
+                text-align: center;
+                color: orangered;
+                font-weight: bold;
+            }
+            
+            span {
+                font-size: 28px;
+            }
+        }
+        }
+        &:hover .product-active-hover{
+            opacity: 1;
         }
     }
     .product-item-info {

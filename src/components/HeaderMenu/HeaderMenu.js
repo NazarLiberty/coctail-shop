@@ -31,11 +31,11 @@ const HeaderMenu = () => {
             className={`header-menu-wrapper${stickyMenu ? ' menu-sticky' : "", activeMenu ? ' active' : ''}`}
             ref={headerMenuElement}>
             <div className={`menu-logo${stickyMenu ? ' menu-sticky' : ""}`}>
-                <a className="menu-logo-img">
+                <div className="menu-logo-img">
                     <Link to="/">
                         <HeaderLogo />
                     </Link>
-                </a>
+                </div>
             </div>
             <div className={`menu-cat-wrapper${stickyMenu ? ' menu-sticky' : ""}`}>
 
@@ -46,15 +46,19 @@ const HeaderMenu = () => {
                         </span>
                     </div>
                 </Link>
-                <div className="menu-cat-item">
-                    non-alcoholic
+                <Link to="/non-alcoholic">
+                    <div className="menu-cat-item">
+                        non-alcoholic
             <span className="menu-cat-hover">
-                    </span></div>
-                <div className="menu-cat-item">
-                    Optional Alcohol
+                        </span></div>
+                </Link>
+                <Link to="/optional">
+                    <div className="menu-cat-item">
+                        Optional Alcohol
             <span className="menu-cat-hover">
-                    </span>
-                </div>
+                        </span>
+                    </div>
+                </Link>
                 <div className="menu-cat-item special">
                     Contact Us
             <span className="menu-cat-hover">

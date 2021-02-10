@@ -11,7 +11,34 @@ export default class CocktailSerices {
         const response = await fetch(
             "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic")
         if (!response.ok) {
-            throw new Error('Fetch error - ', data.status)
+            throw new Error('Fetch error - ', response.status)
+        }
+        const data = await response.json()
+        return data.drinks.map(this._transformCocktailShort)
+    }
+    getNonAlcoholicList = async () => {
+        const response = await fetch(
+            "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic")
+        if (!response.ok) {
+            throw new Error('Fetch error - ', response.status)
+        }
+        const data = await response.json()
+        return data.drinks.map(this._transformCocktailShort)
+    }
+    getOptionalList = async () => {
+        const response = await fetch(
+            "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Optional_Alcohol")
+        if (!response.ok) {
+            throw new Error('Fetch error - ', response.status)
+        }
+        const data = await response.json()
+        return data.drinks.map(this._transformCocktailShort)
+    }
+    getListByAlcohol = async (alcohol) => {
+        const response = await fetch(
+            `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${alcohol}`)
+        if (!response.ok) {
+            throw new Error('Fetch error - ', response.status)
         }
         const data = await response.json()
         return data.drinks.map(this._transformCocktailShort)

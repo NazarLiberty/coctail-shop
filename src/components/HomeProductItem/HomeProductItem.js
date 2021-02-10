@@ -5,6 +5,7 @@ import './HomeProductItem.scss'
 const renderIngredients = (data) => {
     return data.map((item, index) => {
         if (item) return <span key={index}>{index + 1}: {item}</span>
+        else return null
     })
 }
 

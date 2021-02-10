@@ -4,10 +4,11 @@ import { setLoadedCategories } from '../../redux/actions/actions'
 import AlcoholCategoryItem from '../AlcoholCategoryItem/AlcoholCategoryItem'
 import AlcoholCategoryList from './AlcoholCategoryList'
 import DummyAlcoholService from '../../services/dummy-alcohol-service'
+import { Link } from 'react-router-dom'
 
 const renderCategories = (data) => {
     return data.map((item) => {
-        return <AlcoholCategoryItem {...item} />
+        return <Link to={`/${item.name}`}> <AlcoholCategoryItem {...item} /> </Link>
     })
 }
 
